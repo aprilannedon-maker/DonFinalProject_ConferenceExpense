@@ -1,0 +1,334 @@
+
+:root {
+  --primary-blue: #0284c7;      
+  --header-bg: #8ecae6;          
+  --header-text: #023047;       
+  --button-accent: #e0f2fe;      
+  --bg-subtotal: #f0f9ff;       
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Landing Page */
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(2, 48, 71, 0.75), rgba(142, 202, 230, 0.75)),
+    url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.landing-content {
+  display: flex;
+  gap: 2.5rem;
+  max-width: 1000px;
+}
+
+.landing-hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.landing-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.get-started-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.75rem;
+  background-color: #38bdf8;
+  color: #023047;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.get-started-btn:hover {
+  background-color: #7dd3fc;
+}
+
+.landing-description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-bg);
+  padding: 1rem 2rem;
+  color: var(--header-text);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.nav-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: var(--header-text);
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.nav-links button:hover {
+  opacity: 0.8;
+}
+
+.nav-links .show-details-btn {
+  background-color: #38bdf8;
+  color: #023047;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.nav-links .show-details-btn:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+/* Main Layout & Sections */
+.selection-section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  text-align: center;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  font-size: 1.4rem;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 180px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card h3 {
+  color: #0f172a;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.capacity {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.price {
+  color: var(--primary-blue);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.quantity-controls button {
+  background-color: var(--button-accent);
+  color: var(--header-text);
+  border: 1px solid #7dd3fc;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.quantity-controls button:hover {
+  background-color: var(--button-accent-hover);
+}
+
+.subtotal-display {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: var(--bg-subtotal);
+  color: var(--header-text);
+  border: 1px solid #bae6fd;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+/* Meals Section */
+.people-input-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--header-text);
+}
+
+.people-input-container input {
+  margin-left: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  width: 90px;
+  border: 1px solid #7dd3fc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.people-input-container input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
+}
+
+.meals-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.meal-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--header-text);
+}
+
+/* Modal Popup */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+  color: var(--header-text);
+  font-size: 1.25rem;
+}
+
+.grand-total-amount {
+  color: var(--primary-blue);
+  font-size: 1.8rem;
+  margin-top: 0.25rem;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  color: #0f172a;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.summary-table th, 
+.summary-table td {
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  text-align: left;
+}
+
+.summary-table th {
+  background-color: var(--bg-subtotal);
+  color: var(--header-text);
+}
